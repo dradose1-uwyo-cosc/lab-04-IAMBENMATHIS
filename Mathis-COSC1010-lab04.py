@@ -1,12 +1,9 @@
-# Your Name Here
+#Ben Mathis
 # UWYO COSC 1010
-# Submission Date
+# 10/1/24
 # Lab 03 
-# Lab Section: 
-# Sources, people worked with, help given to: 
-# your
-# comments
-# here
+# Lab Section: 10
+# Sources, people worked with, help given to: Jackson Fetsco, Austin Barner, Michael Stoll
 
 
 
@@ -99,7 +96,42 @@ min_temps = [
 # You cannot use any pre-existing functions (like mean()) and must perform the calculations manually.
 # Output the results of both calculations.
 
+
+bucket_max = 0
+bucket_min = 0
+for t in range(0, len(max_temps)):
+    bucket_max = bucket_max + max_temps[t]
+    bucket_min = bucket_min + min_temps[t]
+max_temp_mean = bucket_max / len(max_temps)
+min_temp_mean = bucket_min / len(min_temps)
+
+print(bucket_max)
+print(bucket_min)
+print(max_temp_mean)    
+print(min_temp_mean)
+
 # For the next part, determine the highest and lowest recorded temperatures.
 # HINT: You can find this information without using any logic or looping.
 
 
+max_min = min_temps[0]
+max_max = max_temps[0]
+min_min = min_temps[0]
+min_max = max_temps[0]
+for i in range(0, len(min_temps)):
+    if min_temps[i] > max_min:
+        max_min = min_temps[i]
+    if min_temps[i] < min_min:
+        min_min = min_temps[i]
+    if max_temps[i] > max_max:
+        max_max = max_temps[i]
+    if max_temps[i] < min_max:
+        min_max = max_temps[i]
+    
+print(f"The maximum minimum temperature is {max_min}.")
+print(f"The minimum minimum temperature is {min_min}.")
+print(f"The maximum maximum temperature is {max_max}.")
+print(f"The minimum maximum temperature is {min_max}.")
+
+
+    
